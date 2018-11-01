@@ -6,12 +6,15 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "eslint --fix --ext js,vue src",
-    "lintfix": "eslint --fix --ext .js,.vue .",
+    "lintfix": "eslint --fix --ext .js,.vue src",
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "eslint-config-es": "^0.9.1",
     "eslint-plugin-babel": "^5.2.1",
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.5",
@@ -34,7 +37,6 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/strongly-recommended",
       "eslint:recommended"
     ],
     "parserOptions": {
