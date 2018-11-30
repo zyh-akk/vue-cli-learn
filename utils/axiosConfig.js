@@ -1,6 +1,4 @@
-import Vue from 'vue'
 import axios from 'axios'
-import router from './router'
 
 // axios 配置
 axios.defaults.timeout = 5000
@@ -30,29 +28,29 @@ axios.interceptors.response.use(
   }
 )
 
-export default {
-  //get请求
-  get (url, param) {
-    return new Promise((resolve, reject) => {
-      axios({
-        method: 'get',
-        url,
-        params: param
-      }).then(res => {
-        resolve(res.data)
-      })
+const get = function (url, param) {
+  return new Promise((resolve, reject) => {
+    axios({
+      method: 'get',
+      url,
+      params: param
+    }).then(res => {
+      resolve(res.data)
     })
-  },
-  //post请求
-  post (url, param) {
-    return new Promise((resolve, reject) => {
-      axios({
-        method: 'post',
-        url,
-        data: param
-      }).then(res => {
-        resolve(res)
-      })
-    })
-  }
+  })
 }
+
+//post请求
+const post = function (url, param) {
+  return new Promise((resolve, reject) => {
+    axios({
+      method: 'post',
+      url,
+      data: param
+    }).then(res => {
+      resolve(res)
+    })
+  })
+}
+
+export {get, post}

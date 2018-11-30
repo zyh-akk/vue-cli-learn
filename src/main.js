@@ -2,10 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import Vue from 'vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import {get, post} from './utils/axiosConfig'
+import {get, post} from '../utils/axiosConfig.js'
 
 Vue.use(VueAxios, axios)
 Vue.prototype.$get = get
