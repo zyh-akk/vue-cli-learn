@@ -16,7 +16,7 @@ module.exports = {
     // no-var
     'no-var': 'error',
     // 要求或禁止 var 声明中的初始化
-    'init-declarations': 2,
+    'init-declarations': ["error", "always"],
     // 强制使用单引号
     'quotes': [
       'error', 'single'
@@ -69,9 +69,7 @@ module.exports = {
       2, 'last'
     ],
     // 圈复杂度
-    'complexity': [
-      2, 9
-    ],
+    'complexity': ["error", {"max": 18}],
     // 以方括号取对象属性时，[ 后面和 ] 前面是否需要空格, 可选参数 never, always
     'computed-property-spacing': [2, 'never']
   }
